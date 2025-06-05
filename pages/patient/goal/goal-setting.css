@@ -1,0 +1,104 @@
+/* goal-setting.css */
+.goal-setting {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  flex-wrap: wrap; /* change the line */
+}
+
+.sleep,
+.food,
+.exercise,
+.extra {
+  padding: 10px;
+  align-items: center;
+}
+
+.box {
+  margin-bottom: 10px;
+  background-color: rgb(216, 244, 243);
+  display: flex;
+  padding: 15px 10px 30px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Eat {
+  margin-bottom: 10px;
+  background-color: rgb(216, 244, 243);
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.food-item {
+  display: flex;
+  align-items: center;
+  margin: 10px; /* avoid overlap */
+  background-color: #e0f7fa;
+  padding: 15px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+
+.food-item i {
+  margin: 10px; /* icon's margin */
+}
+
+.food-item p {
+  margin: 0;
+  padding: 10px;
+}
+
+.food {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Item is selected --> style*/
+.food-item.selected {
+  border: 2px solid #ea9c5c;
+  background-color: rgb(252, 249, 231);
+}
+
+/* the number display the hours for sleeping and excercising */
+datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+  width: 200px;
+}
+
+/* option { padding: } */
+
+input[type="range"] {
+  width: 250px;
+  margin: 0;
+}
+
+/* number position in sleeping bar*/
+.sleep-input-container,
+.exercise-input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#markers,
+#exercise-markers {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 20px; /* number down the button of the bar*/
+}
+
+#markers option,
+#exercise-markers option {
+  transform: rotate(270deg); /* make number stand */
+  margin-top: 8px;
+}

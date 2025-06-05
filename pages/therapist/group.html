@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARE - Group Therapy Dashboard</title>
+    <link rel="stylesheet" href="./css/group.css">
+</head>
+
+<body>
+    <header>
+        <div><a href="../../index.html" class="logo">CARE</a></div>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="../../index.php">Home</a></li>
+                <li class="nav-item"><a href="note.html">Patient</a></li>
+                <li class="nav-item"><a href="../../setting.html">Setting</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="group-list">
+            <ul id="group-list"></ul>
+        </aside>
+        <section class="group-members">
+            <h2 style="text-align: center;">Group Member</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Case Type</th>
+                    </tr>
+                </thead>
+                <tbody id="member-list">
+                    <!-- Members will be generated here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <!-- Right slide menu for member details -->
+        <div id="right-slide-menu" class="slide-menu">
+            <div class="slide-menu-content">
+                <div id="member-details"></div>
+            </div>
+        </div>
+        <section class="meeting-list">
+            <h2 style="text-align: center;">Meeting List <button id="addMeetingButton">+</button></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Topic</th>
+                    </tr>
+                </thead>
+                <tbody id="meeting-list">
+                    <!-- Meetings will be generated here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <!-- Right slide menu for meeting details -->
+        <div id="meeting-details-slide-menu" class="slide-menu">
+            <div class="slide-menu-content">
+                <div id="meeting-details"></div>
+            </div>
+        </div>
+        <section class="meeting-history">
+            <h2 style="text-align: center;">Meeting History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Topic</th>
+                    </tr>
+                </thead>
+                <tbody id="meeting-history">
+                    <!-- Meeting history will be generated here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Container for dynamically loaded modal -->
+    <div id="modalContainer"></div>
+
+    <script type="module" src="./js/addmeeting.js"></script> <!-- This script is for the modal -->
+    <script type="module" src="./js/group.js"></script>
+</body>
+
+</html>

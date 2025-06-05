@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - CaRe</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Integrated CSS file -->
+  </head>
+  <body>
+    <header>
+      <div><a href="../../index.html" class="logo">CARE</a></div>
+
+      <div id="nav-placeholder">
+        <!-- Navigation content here -->
+        <nav>
+          <ul class="navigationbtn">
+            <li>
+              <a href="goal/goal.html" onclick="loadContent('goal/goal.html')"
+                >Goals</a
+              >
+            </li>
+            <li>
+              <a href="today.html" onclick="loadContent('today.html')">Today</a>
+            </li>
+            <li>
+              <a href="history.html" onclick="loadContent('history.html')"
+                >History</a
+              >
+            </li>
+            <li>
+              <a
+                href="user_dashboard.html"
+                onclick="loadContent('user_dashboard.html')"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-item"><a href="../../setting.html">Setting</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Welcome and Instructions Section -->
+    <div class="dashboard-container">
+      <h1>Welcome to CaRe</h1>
+      <p>
+        We are glad to have you here! Use the navigation bar above to explore
+        the features of this application:
+      </p>
+      <ul class="features-list">
+        <li><strong>Goals</strong>: Set and track your personal goals.</li>
+        <li>
+          <strong>History</strong>: Review your past records and reflections.
+        </li>
+        <li>
+          <strong>Today</strong>: Record your daily emotions, sleep, diet, and
+          exercise.
+        </li>
+        <li>
+          <strong>Dashboard</strong>: See an overview of your activities and
+          progress.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

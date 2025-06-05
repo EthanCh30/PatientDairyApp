@@ -1,0 +1,60 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fetch Test</title>
+    </head>
+    <body>
+        <h1>Fetch and Update Test</h1>
+        <button id="fetchButton">Fetch Groups</button>
+        <button id="updateButton">Update Severity</button>
+        <pre id="result"></pre>
+
+        <script type="module">
+            import config from '../../../config.js'; // 根据实际路径调整
+
+            console.log('Script loaded. Config:', config);
+
+            document.getElementById('fetchButton').addEventListener('click', () => {
+                console.log('Fetch button clicked.');
+
+                fetch(`${config.apiBaseUrl}/get_groups.php`)
+                    .then(response => {
+                        console.log('Response received:', response);
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Data parsed:', data);
+                        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+                    })
+                    .catch(error => {
+                        console.error('Error occurred:', error);
+                        document.getElementById('result').textContent = 'Error: ' + error.message;
+                    });
+            });
+
+            document.getElementById('updateButton').addEventListener('click', () => {
+                const memberId = prompt("Please enter the Member ID to update:");
+                const isSevere = prompt("Please enter the new severity status (0 or 1):");
+
+                fetch(`${config.apiBaseUrl}/update_member_statement.php`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ memberId: parseInt(memberId, 10), isSevere: parseInt(isSevere, 10) })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Update response:', data);
+                    document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error updating member statement:', error);
+                    document.getElementById('result').textContent = 'Error: ' + error.message;
+                });
+            });
+        </script>
+    </body>
+    </html>

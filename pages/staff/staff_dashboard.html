@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - CaRe</title>
+    <link rel="stylesheet" href="professional_staff_info.css" />
+    <script type="module" src="js/professional_staff_info.js"></script>
+</head>
+<body>
+    <header>
+        <div><a href="../../index.html" class="logo">CARE</a></div>
+
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">Setting</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard-container">
+            <h1>Staff Dashboard</h1>
+            <p>Welcome to the staff dashboard. Here you can manage patient information and view upcoming appointments.</p>
+
+            <div id="details-window">
+                <h2>Patient Information</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patient-table-body">
+                        <!-- Patient data will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="assignment-window">
+            <h2>Assign Patient to Therapist</h2>
+
+            <!-- Form for Assigning Patient to Therapist -->
+            <form method="POST" action="assign_patient.php">
+                <label for="therapist">Select Therapist:</label>
+                <select id="therapist" name="TherapistID">
+                    <option value="1">Therapist A</option>
+                    <option value="2">Therapist B</option>
+                    <!-- Populate dynamically from database -->
+                </select>
+                
+                <label for="patient">Select Patient:</label>
+                <select id="patient" name="PatientID">
+                    <option value="1">Patient X</option>
+                    <option value="2">Patient Y</option>
+                    <!-- Populate dynamically from database -->
+                </select>
+                
+                <input type="submit" value="Assign Patient">
+            </form>
+        </div>
+    </div>
+
+    </main>
+</body>
+</html>

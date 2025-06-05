@@ -1,0 +1,113 @@
+/* Reset some basic elements */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.jpg');
+    background-attachment:fixed;
+    background-position: center;
+    color: #333;
+}
+
+main {
+    flex:1;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #008cba;
+    font-family: 'Verdana', sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #008cba;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Custom styles for intro and team images */
+.intro img, .team-member img {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover; /* Ensures that the image maintains aspect ratio while covering the element */
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+/* Team section spacing */
+.team {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around; /* Distribute team members evenly */
+    flex-wrap: wrap; /* Wrap the team members on smaller screens */
+    gap: 20px; /* Space between team members */
+}
+
+/* Team member container styling */
+.team-member {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px; /* Controls the width of each team member card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px); /* Lift the card slightly on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+/* Team member image styling */
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover; /* Ensures the image is cropped well within the circle */
+}
+
+/* Team member name styling */
+.team-member h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #172dac;
+    font-weight: bold;
+}
+
+/* Team member role and description styling */
+.team-member p {
+    font-size: 1.1em;
+    line-height: 1.4;
+    color: #555; /* Slightly darker color for readability */
+}
+
+main section {
+    padding-top: 10px;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Settings</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/setting.css" />
+  </head>
+
+  <body>
+    <div id="nav-placeholder">
+      <!-- Navigation content here -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+<<<<<<< Updated upstream
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="setting.html">Settings</a></li>
+=======
+          
+>>>>>>> Stashed changes
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <div class="settings-container">
+        <h1 id="settingsTitle">User Settings</h1>
+
+        <!-- Change Avatar Section -->
+        <section class="avatar-section">
+          <h2 id="avatarTitle">Change Avatar</h2>
+          <div class="avatar-preview">
+            <img
+              src="../img/default-avatar.png"
+              alt="User Avatar"
+              id="avatarPreview"
+            />
+          </div>
+          <form id="avatarForm">
+            <label id="selectAvatarLabel" for="avatarInput"
+              >Select new avatar:</label
+            >
+            <input type="file" id="avatarInput" accept="image/*" />
+            <button type="button" id="uploadBtn" onclick="uploadAvatar()">
+              Upload
+            </button>
+          </form>
+        </section>
+
+        <!-- Change Username Section -->
+        <section class="username-section">
+          <h2 id="usernameTitle">Change Username</h2>
+          <form id="usernameForm">
+            <label id="newUsernameLabel" for="usernameInput"
+              >New Username:</label
+            >
+            <input
+              type="text"
+              id="usernameInput"
+              placeholder="Enter new username"
+            />
+            <button
+              type="button"
+              id="updateUsernameBtn"
+              onclick="updateUsername()"
+            >
+              Update Username
+            </button>
+          </form>
+        </section>
+
+        <!-- Language Section -->
+        <section class="language-section">
+          <h2 id="languageTitle">Change Language</h2>
+          <select id="languageSelector" onchange="switchLanguage()">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+          </select>
+        </section>
+
+        <!-- Reset Password Section -->
+        <section class="password-section">
+          <h2 id="passwordTitle">Reset Password</h2>
+          <form id="passwordForm">
+            <label id="currentPasswordLabel" for="currentPassword"
+              >Current Password:</label
+            >
+            <input
+              type="password"
+              id="currentPassword"
+              placeholder="Enter current password"
+            />
+
+            <label id="newPasswordLabel" for="newPassword">New Password:</label>
+            <input
+              type="password"
+              id="newPassword"
+              placeholder="Enter new password"
+            />
+
+            <label id="confirmPasswordLabel" for="confirmPassword"
+              >Confirm New Password:</label
+            >
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm new password"
+            />
+
+            <button
+              type="button"
+              id="resetPasswordBtn"
+              onclick="resetPassword()"
+            >
+              Reset Password
+            </button>
+          </form>
+        </section>
+
+        <section class="save-section">
+          <button
+            type="button"
+            id="saveSettingsBtn"
+            onclick="saveSettingsAndGoBack()"
+          >
+            Save Settings
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <div id="footer-placeholder">
+      <footer>
+        <p>&copy; 2023 CaRe. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="js/setting.js"></script>
+  </body>
+</html>

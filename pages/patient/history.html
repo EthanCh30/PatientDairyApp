@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History - CaRe</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 调整main的上下间距 */
+      main {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 20px;
+        gap: 20px;
+      }
+
+      /* 左边选择日期和状态的部分 */
+      .left-section {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin-right: 20px;
+      }
+
+      /* 日期选择框样式 */
+      #date-picker {
+        margin-bottom: 20px;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* 状态栏样式 */
+      #status-section {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #status-section h2 {
+        margin-bottom: 15px;
+      }
+
+      #status-section p {
+        margin: 10px 0;
+      }
+
+      /* 右边患者日记部分 */
+      .right-section {
+        flex-grow: 1;
+        background-color: #f9f9f9;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .right-section h2 {
+        margin-bottom: 15px;
+      }
+
+      .right-section p {
+        margin-top: 15px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* 响应式设计：小屏幕下布局调整 */
+      @media (max-width: 768px) {
+        main {
+          flex-direction: column;
+        }
+
+        .left-section {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .right-section {
+          width: 100%;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+      <div><a href="../../index.html" class="logo">CARE</a></div>
+      <div id="nav-placeholder">
+        <nav>
+          <ul class="navigationbtn">
+            <li><a href="goal/goal.html" onclick="loadContent('goal/goal.html')">Goals</a></li>
+            <li><a href="today.html" onclick="loadContent('today.html')">Today</a></li>
+            <li><a href="history.html" onclick="loadContent('history.html')">History</a></li>
+            <li><a href="user_dashboard.html" onclick="loadContent('user_dashboard.html')">Dashboard</a></li>
+            <li class="nav-item"><a href="../../setting.html">Setting</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+      <!-- Left Section: Date Picker and Status -->
+      <div class="left-section">
+        <!-- Date Selector -->
+        <label for="date-picker">Select Date:</label>
+        <input type="date" id="datePicker" />
+        
+        <!-- Status Section -->
+        <section id="status-section">
+          <h2>Status</h2>
+          <p><strong>Mood:</strong> <span id="mood">N/A</span></p>
+          <p><strong>Food:</strong> <span id="food">N/A</span></p>
+          <p><strong>Exercise:</strong> <span id="exercise">N/A</span></p>
+          <p><strong>Affirmation:</strong> <span id="affirmation">N/A</span></p>
+        </section>
+      </div>
+
+      <!-- Right Section: Patient Note -->
+      <div class="right-section">
+        <h2>Patient Note</h2>
+        <p id="patient-note">No diary entry for this date.</p>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // 默认获取当天日期
+          const today = new Date().toISOString().split('T')[0];
+          const datePicker = document.getElementById('datePicker');
+          datePicker.value = today;
+
+          function fetchDiary(date) {
+              fetch(`http://localhost:3000/pages/patient/getDiary.php?date=${date}`)
+                  .then(response => {
+                      if (!response.ok) {
+                          throw new Error('Network response was not ok');
+                      }
+                      return response.json();
+                  })
+                  .then(data => {
+                      if (data.error || data.message) {
+                          document.getElementById('mood').innerText = "N/A";
+                          document.getElementById('food').innerText = "N/A";
+                          document.getElementById('exercise').innerText = "N/A";
+                          document.getElementById('affirmation').innerText = "N/A";
+                          document.getElementById('patient-note').innerText = data.message || data.error;
+                      } else if (data.length > 0) {
+                          const entry = data[0]; // 获取第一个日记条目
+                          document.getElementById('mood').innerText = entry.Mood;
+                          document.getElementById('food').innerText = entry.Food;
+                          document.getElementById('exercise').innerText = entry.Exercise;
+                          document.getElementById('affirmation').innerText = entry.Affirmation;
+                          document.getElementById('patient-note').innerText = entry.PatientNote;
+                      }
+                  })
+                  .catch(error => {
+                  console.error('请求失败:', error);
+                  document.getElementById('mood').innerText = "N/A";
+                  document.getElementById('food').innerText = "N/A";
+                  document.getElementById('exercise').innerText = "N/A";
+                  document.getElementById('affirmation').innerText = "N/A";
+                  document.getElementById('patient-note').innerText = 'Failed to fetch data';
+            });
+
+          }
+
+          // 页面加载时默认获取当天的日记
+          fetchDiary(today);
+
+          // 日期选择器变化时，获取对应日期的日记
+          datePicker.addEventListener('change', function() {
+              const selectedDate = this.value;
+              if (selectedDate) {
+                  fetchDiary(selectedDate);
+              }
+          });
+      });
+    </script>
+</body>
+</html>

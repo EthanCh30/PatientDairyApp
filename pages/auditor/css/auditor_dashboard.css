@@ -1,0 +1,239 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a, main {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    max-height: calc(100vh - 100px);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'Pacifico', cursive;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.therapist-window {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    width: 250px;
+    flex-shrink: 0;
+    height: calc(100vh - 180px);
+    
+}
+
+.therapist-window h2 {
+    color: #4CAF50;
+}
+
+.therapist-details {
+    width: 200px;
+    height: 150px;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    display: flex;
+}
+
+.therapist-details p {
+    font-size: 20px;
+}
+
+.therapist-details .details {
+    text-align: left;
+    flex-grow: 1;
+    padding-top: 30px;
+}
+
+.therapist-details .details h3 {
+    margin-bottom: 10px;
+}
+
+.therapist-details:hover {
+    color: #4CAF50;
+    background-color: #c2ecc45b;
+    font-weight: bold;
+}
+
+.name.selected .therapist-details {
+    background-color: #458f4877;
+    font-weight: bold;
+}
+
+.therapist-details img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#details-window {
+    margin: 10px;
+    border: 2px solid #ccc;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    overflow-y: auto;
+    flex-grow: 1;
+    height: calc(100vh - 180px);
+}
+
+#details-window .buttons {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.patient-table th, .patient-table td {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffeb3b; /* Soft yellow for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff; /* White color on hover */
+}
+
+header {
+    background-color: #172dac;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 5px 0 0 0;
+}
+
+header {
+    background-color: #20C997;
+    padding: 5px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: auto;
+}
+
+/* Content area */
+main {
+    flex: 1;
+}
+
+/* Navigation bar styling */
+nav {
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+    background-color: #172dac67;
+}
+
+div .logo {
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'Pacifico', cursive;
+    color: white;
+}

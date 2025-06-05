@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./goalStyle.css" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <title>Weekly Goal Tracker</title>
+  </head>
+  <body>
+    <header>
+      <div><a href="../../../index.html" class="logo">CARE</a></div>
+
+      <div id="nav-placeholder">
+        <!-- Navigation content here -->
+        <nav>
+          <ul class="navigationbtn">
+            <li>
+              <a href="goal.html" onclick="loadContent('goal.html')">Goals</a>
+            </li>
+            <li>
+              <a href="../today.html" onclick="loadContent('../today.html')"
+                >Today</a
+              >
+            </li>
+            <li>
+              <a href="../history.html" onclick="loadContent('../history.html')"
+                >History</a
+              >
+            </li>
+            <li>
+              <a
+                href="../user_dashboard.html"
+                onclick="loadContent('../user_dashboard.html')"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="../../../setting.html">Setting</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Left section: Goal Setting -->
+      <iframe
+        src="goal-setting.html"
+        style="width: 100%; height: 100vh; border: none; overflow: visible"
+      ></iframe>
+      <!-- Right section: Tracking  -->
+      <iframe
+        src="goal-tracking.html"
+        style="width: 100%; height: 100vh; border: none; overflow: visible"
+      ></iframe>
+    </div>
+    <script>
+      // refresh the page when add goal button is clicked
+      window.addEventListener("message", (event) => {
+        if (event.data === "goalsUpdated") {
+          location.reload();
+        }
+      });
+    </script>
+  </body>
+</html>

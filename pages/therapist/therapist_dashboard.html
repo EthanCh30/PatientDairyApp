@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist Dashboard - CaRe</title>
+    <link rel="stylesheet" href="./css/therapist_dashboard.css">
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <h1 class="tagline">Empowering Therapists, Enhancing Lives</h1>
+
+            <!-- 添加按钮 -->
+            <div class="button-container">
+                <a href="note.html" class="btn-note">Go to Notes</a>
+                <a href="group.html" class="btn-group">Go to Group Therapy</a>
+            </div>
+            <div class="total-list">
+
+                <!-- 未发生的会议列表 -->
+                <section class="meeting-list">
+                    <h2 style="text-align: center;">Upcoming Meetings</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Topic</th>
+                            </tr>
+                        </thead>
+                        <tbody id="upcoming-meeting-list">
+                            <!-- Upcoming meetings will be generated here by JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- 未发生的预约列表 -->
+                <section class="appointment-list">
+                    <h2 style="text-align: center;">Upcoming Appointments</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Client</th>
+                            </tr>
+                        </thead>
+                        <tbody id="upcoming-appointment-list">
+                            <!-- Upcoming appointments will be generated here by JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="./js/therapist_dashboard.js"></script>
+</body>
+
+</html>

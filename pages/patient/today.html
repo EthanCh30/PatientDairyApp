@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Today - CaRe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+
+  </head>
+  <body onload="showSection('section0')">
+    <!-- Header Section -->
+    <header>
+      <div><a href="../../index.html" class="logo">CARE</a></div>
+
+      <div id="nav-placeholder">
+        <!-- Navigation content here -->
+        <nav>
+          <ul class="navigationbtn">
+            <li>
+              <a href="goal/goal.html" onclick="loadContent('goal/goal.html')"
+                >Goals</a
+              >
+            </li>
+            <li>
+              <a href="today.html" onclick="loadContent('today.html')">Today</a>
+            </li>
+            <li>
+              <a href="history.html" onclick="loadContent('history.html')"
+                >History</a
+              >
+            </li>
+            <li>
+              <a
+                href="user_dashboard.html"
+                onclick="loadContent('user_dashboard.html')"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-item"><a href="../../setting.html">Setting</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+    <!-- Section 0: How's Today? -->
+    <div id="section0" class="section">
+      <div class="speech-bubble">How's today?</div>
+      <div class="rating">
+        <div class="bad" onclick="setMood(0)">0</div>
+        <div class="bad" onclick="setMood(1)">1</div>
+        <div class="bad" onclick="setMood(2)">2</div>
+        <div class="bad" onclick="setMood(3)">3</div>
+        <div class="normal" onclick="setMood(4)">4</div>
+        <div class="normal" onclick="setMood(5)">5</div>
+        <div class="normal" onclick="setMood(6)">6</div>
+        <div class="normal" onclick="setMood(7)">7</div>
+        <div class="good" onclick="setMood(8)">8</div>
+        <div class="good" onclick="setMood(9)">9</div>
+        <div class="good" onclick="setMood(10)">10</div>
+      </div>
+      <div class="rating-label">0 : Unwell &nbsp;&nbsp;&nbsp;&nbsp; 10 : Satisfied</div>
+    </div>
+    
+
+<!-- Section 1: How's Sleep? -->
+<div id="section1" class="section" style="display: none">
+  <div class="speech-bubble">How long did you sleep today?</div>
+  <div class="slider-container">
+    <input
+      type="range"
+      id="sleepHours"
+      min="0"
+      max="24"
+      step="1"
+      value="8"
+      oninput="updateSleepHours()"
+    />
+  </div>
+  <div id="sleepHoursText">I slept 8 hours today</div>
+
+  <div class="rating">
+    <div class="blue" onclick="showSection('section0')">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="blue" onclick="setSleepAndProceed()">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2: What food have you completed? -->
+<div id="section2" class="section" style="display: none">
+  <div class="speech-bubble">What food have you completed?</div>
+  <div class="rating-row">
+    <div class="normal" onclick="selectFood(this, 'Whole grains')">Whole grains</div>
+    <div class="normal" onclick="selectFood(this, 'Vegetables')">Vegetables</div>
+    <div class="normal" onclick="selectFood(this, 'Fish, Eggs, Meat')">Fish, Eggs, Meat</div>
+  </div>
+  <div class="rating-row">
+    <div class="normal" onclick="selectFood(this, 'Oils, Fats, Nuts')">Oils, Fats, Nuts</div>
+    <div class="normal" onclick="selectFood(this, 'Dairy products')">Dairy products</div>
+    <div class="normal" onclick="selectFood(this, 'None')">None</div>
+  </div>
+
+  <div class="rating">
+    <div class="blue" onclick="showSection('section1')">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="blue" onclick="showSection('section3')">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+  </div>
+</div>
+
+
+<!-- Section 3: How's Exercise? -->
+<div id="section3" class="section" style="display: none">
+  <div class="speech-bubble">How long did you exercise today?</div>
+  <div class="slider-container">
+    <input
+      type="range"
+      id="exerciseHours"
+      min="0"
+      max="8"
+      step="1"
+      value="0"
+      oninput="updateExerciseHours()"
+    />
+  </div>
+  <div id="exerciseHoursText">I exercised 0 hours today</div>
+
+  <div class="rating">
+    <div class="blue" onclick="showSection('section2')">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="blue" onclick="setExerciseAndProceed()">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4: What Motivates You? -->
+<div id="section4" class="section" style="display: none">
+  <div class="speech-bubble">What motivates you?</div>
+  <div class="rating-row">
+    <div class="normal" onclick="selectMotivation(this, 'Family')">Family</div>
+    <div class="normal" onclick="selectMotivation(this, 'Success')">Success</div>
+    <div class="normal" onclick="selectMotivation(this, 'Money')">Money</div>
+  </div>
+  <div class="rating-row">
+    <div class="normal" onclick="selectMotivation(this, 'Health')">Health</div>
+    <div class="normal" onclick="selectMotivation(this, 'Career')">Career</div>
+    <div class="normal" onclick="selectMotivation(this, 'Hobbies')">Hobbies</div>
+  </div>
+
+  <div class="rating">
+    <div class="blue" onclick="showSection('section3')">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="blue" onclick="showSection('section5')">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Section 5: Write Down Your Diary -->
+<div id="section5" class="section" style="display: none">
+  <div class="speech-bubble">Write down your diary today!</div>
+  <div class="diary-input">
+    <textarea class="diary-textarea" placeholder="Write your diary here..."></textarea>
+  </div>
+  <div class="rating">
+    <div class="blue" onclick="showSection('section4')">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <div class="blue">
+      <label for="file-upload" style="cursor: pointer">Upload(doc,img,mp3)</label>
+      <input
+        type="file"
+        id="file-upload"
+        accept=".doc,.docx,.pdf,.jpg,.png,.mp3"
+        style="display: none"
+        onchange="handleFileUpload(event)"
+      />
+    </div>
+
+    <div class="blue" onclick="saveDiary()">
+      Save
+    </div>
+  </div>
+</div>
+
+<!-- Section 6: Completion -->
+<div id="section6" class="section" style="display: none">
+  <div class="complete-message">
+    <h2>You have completed today's record!</h2>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+
+
+<script>
+  
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+function updateSleepHours() {
+    const hours = document.getElementById('sleepHours').value;
+    document.getElementById('sleepHoursText').innerText = `I slept ${hours} hours today`;
+}
+
+function updateExerciseHours() {
+    const hours = document.getElementById('exerciseHours').value;
+    document.getElementById('exerciseHoursText').innerText = `I exercised ${hours} hours today`;
+}
+
+
+  //日记ID和病人ID固定（以后修改）
+  let DiaryID = 11;
+  let PatientID = 11;
+
+  //Mood
+  let Mood;
+  function setMood(value) {
+    Mood = value;  // 先设置 Mood
+    console.log("Mood =", Mood); // 输出当前的 Mood 值到控制台
+    showSection('section1'); // 然后跳转到 section1
+  }
+
+  //Sleep
+  let Sleep;
+  // 更新滑块值时显示当前的睡眠小时数
+  function updateSleepHours() {
+    const sleepHours = document.getElementById('sleepHours').value;
+    document.getElementById('sleepHoursText').textContent = `I slept ${sleepHours} hours today`;
+  }
+
+  // 设置 Sleep 变量并跳转到 section2
+  function setSleepAndProceed() {
+    Sleep = document.getElementById('sleepHours').value; // 获取当前滑块的值并设置 Sleep
+    console.log("Sleep =", Sleep); // 输出 Sleep 值到控制台
+    showSection('section2'); // 然后跳转到 section2
+  }
+
+
+ // Food
+ let Food;
+// 选择食物计划并取消其他选项的选中状态
+function selectFood(element, foodItem) {
+  const foodOptions = document.querySelectorAll('#section2 .normal');
+  // 将所有选项重置为 normal 类
+  foodOptions.forEach(option => option.classList.remove('blue'));
+  // 选中当前点击的选项，并替换类为 blue
+  Food = foodItem;
+  element.classList.add('blue');
+  console.log("Food =", Food); // 输出当前选择的食物计划
+}
+
+//Exercise
+   let Exercise;
+// 更新滑块值时显示当前的运动小时数
+function updateExerciseHours() {
+  const exerciseHours = document.getElementById('exerciseHours').value;
+  document.getElementById('exerciseHoursText').textContent = `I exercised ${exerciseHours} hours today`;
+}
+// 设置 Exercise 变量并跳转到 section4
+function setExerciseAndProceed() {
+  Exercise = document.getElementById('exerciseHours').value;
+  console.log("Exercise =", Exercise);
+  showSection('section4');
+}
+
+//Motivation
+  let Motivation;
+  let Affirmation;
+  function selectMotivation(element, motivationItem) {
+    const motivationOptions = document.querySelectorAll('#section4 .normal');
+    motivationOptions.forEach(option => option.classList.remove('blue'));
+    Motivation = motivationItem;
+    Affirmation = Motivation;
+    element.classList.add('blue');
+    console.log("Motivation =", Motivation);
+  }
+
+// 保存日记
+function saveDiary() {
+  let PatientNote = document.querySelector('.diary-textarea').value; 
+  if (PatientNote) {  
+    // 输出到 section6  
+    document.getElementById('section6').innerHTML = `  
+      <div class="complete-message">You have completed today's record, keep it up!</div>  
+      <div>Date: ${new Date().toLocaleDateString()}</div>  
+      <div>Sleep: ${Sleep} hours</div>  
+      <div>Exercise: ${Exercise} hours</div>  
+      <div>Food: ${Food}</div>  
+      <div>Mood: ${Mood}</div>  
+      <div>Affirmation: ${Affirmation}</div>  
+      <div>Modified Date: ${new Date().toLocaleString()}</div>  
+      <div>Patient Note: ${PatientNote}</div>  
+    `;  
+  
+    alert("Your diary has been saved locally!");  
+    showSection('section6');  
+  
+    // 发送数据到服务器  
+    fetch('http://localhost:3000/pages/patient/saveDiary.php', {  
+      method: 'POST',  
+      headers: {  
+        'Content-Type': 'application/json'  
+      },  
+      body: JSON.stringify({  
+        DiaryID: 22,  //NEED TO CHANGE EVERY TIME
+        PatientID: 11,  
+        Date: Date,  
+        Sleep: Sleep,  
+        Exercise: Exercise,  
+        Food: Food,  
+        Mood: Mood,  
+        Affirmation: Affirmation,  
+        PatientNote: PatientNote  
+      })  
+    })  
+    .then(response => response.json())  
+    .then(data => {  
+      if (data.success) {  
+        alert("Your diary has been saved to the database!");  
+      } else {  
+        alert("Failed to save diary to the database: " + data.error);  
+      }  
+    })  
+    .catch(error => {  
+      console.error('Error:', error);  
+      alert("An error occurred while saving your diary.");  
+    });  
+  } else {  
+    alert("Please write something in your diary before saving.");  
+  }  
+}
+
+  // To do 文件上传处理函数 （没有地方存）
+  function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      console.log("File uploaded:", file.name); // 这里可以替换为实际的文件处理逻辑
+    }
+  }
+
+
+
+</script>

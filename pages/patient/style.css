@@ -1,0 +1,383 @@
+/* Navigation bar styling */
+nav {
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+  list-style: none;
+  /* text-decoration: none; */
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  font-weight: bold;
+  background-color: #172dac67;
+}
+
+/* Dropdown menu styling */
+.dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 36px;
+  font-family: "Pacifico", cursive;
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  background-color: #4a62ec;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  width: auto;
+}
+
+main section {
+  padding-top: 10px;
+}
+
+/* today section */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.speech-bubble {
+  font-size: 24px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #f0f0f0 transparent transparent transparent;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.rating div {
+  width: 200px; /* Increase the width */
+  height: 80px; /* Increase the height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; /* Adjust the font size to fit the text */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.rating div:hover {
+  opacity: 0.8;
+}
+
+.rating-label {
+  margin-top: 20px; /* Add margin to create space */
+  font-size: 16px;
+  color: #333;
+}
+
+/* Ensure buttons are spaced into two rows */
+.rating-row {
+  display: flex;
+  justify-content: space-around; /* Ensure even spacing between buttons */
+  margin-top: 20px; /* Space between the two rows */
+}
+
+.rating-row div {
+  width: 150px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.rating-row div:hover {
+  opacity: 0.8;
+}
+
+.good {
+  background-color: #f7e278;
+  color: #000;
+}
+
+.normal {
+  background-color: #d3e2c6;
+  color: #000;
+}
+
+.bad {
+  background-color: #ed6a5e;
+  color: #fff;
+}
+
+.blue {
+  background-color: #4987ce;
+  color: #fff;
+}
+
+.complete-message {
+  font-size: 24px;
+  margin-top: 50px;
+  color: #333;
+}
+
+.diary-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diary-textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* Diary Entry Section */
+.diary-entry {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for textarea */
+.diary-textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+
+/* Style the range slider */
+.slider-container {
+  margin-top: 20px; /* Add some space between the question and slider */
+  text-align: center; /* Center the slider horizontally */
+}
+
+#sleepHours {
+  -webkit-appearance: none; /* Override default appearance */
+  width: 80%; /* Make slider larger */
+  height: 15px; /* Make slider thicker */
+  background: #d3e2c6; /* Slider track color */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Slight transparency */
+  transition: opacity 0.2s;
+}
+
+#sleepHours:hover {
+  opacity: 1; /* Fully opaque on hover */
+}
+
+#sleepHours::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px; /* Thumb size */
+  height: 25px;
+  background: #4caf50; /* Thumb color */
+  cursor: pointer;
+  border-radius: 50%; /* Round thumb */
+}
+
+#sleepHours::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* Style the sleep hours text */
+#sleepHoursText {
+  margin-top: 15px; /* Space between slider and text */
+  font-size: 18px; /* Increase text size */
+  color: #333; /* Text color */
+}
+
+#exerciseHours {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  background: #d3e2c6;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+#exerciseHours:hover {
+  opacity: 1;
+}
+
+#exerciseHours::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#exerciseHours::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#exerciseHoursText {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Dashboard container styling */
+.dashboard-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.dashboard-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.features-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+/* Summary section styling */
+.summary-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary-container h2 {
+  font-size: 24px;
+  color: #333;
+}

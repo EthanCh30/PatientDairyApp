@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARE - Patient Notes</title>
+    <link rel="stylesheet" href="./css/note.css">
+</head>
+<body>
+    <header>
+        <div class="logo">CARE</div>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="../../index.php">Home</a></li>
+                <li class="nav-item"><a href="group.html">Group</a></li>
+                <li class="nav-item"><a href="../../setting.html">Setting</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="group-list">
+            <ul id="group-list"></ul>
+        </aside>
+        <section class="group-members">
+            <h2 style="text-align: center;">Group Member</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="member-list">
+                    <!-- Members will be generated here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <iframe src="journal.html" class="journal-iframe"></iframe>
+    </div>
+
+    <script type="module" src="./js/note.js"></script>
+</body>
+</html>

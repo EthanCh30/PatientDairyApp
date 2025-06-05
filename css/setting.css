@@ -1,0 +1,132 @@
+/* Settings container */
+.settings-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Section styling */
+.settings-container h1 {
+    text-align: center;
+    color: #172dac;
+    margin-bottom: 20px;
+}
+
+.settings-container section {
+    margin-bottom: 40px;
+}
+
+.settings-container section h2 {
+    color: #172dac;
+    margin-bottom: 10px;
+}
+
+/* Form input and label styling */
+.settings-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.settings-container input[type="text"],
+.settings-container input[type="password"],
+.settings-container input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.settings-container input[type="text"]:focus,
+.settings-container input[type="password"]:focus,
+.settings-container input[type="file"]:focus {
+    border-color: #172dac;
+}
+
+/* Button styling */
+.settings-container button {
+    background-color: #172dac;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.settings-container button:hover {
+    background-color: #45a049;
+}
+
+/* Avatar section styling */
+.avatar-preview {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar-preview img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #172dac;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+    .settings-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .settings-container input[type="text"],
+    .settings-container input[type="password"],
+    .settings-container input[type="file"] {
+        font-size: 14px;
+    }
+
+    .settings-container button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #172dac; /* 设置为蓝色背景 */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+    background-color: #172dac67;
+}

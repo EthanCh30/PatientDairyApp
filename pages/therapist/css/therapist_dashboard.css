@@ -1,0 +1,85 @@
+.container {
+    border: 2px solid #ccc;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 60px auto;
+    width: 95%;
+    height: auto; /* 修改高度以适应内容 */
+}
+
+.tagline {
+    font-size: 2em;
+    font-family: 'Brush Script MT', cursive;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-note, .btn-group {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-note {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-group {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* 新增样式 */
+.total-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.meeting-list, .appointment-list {
+    margin: 10px;
+    flex: 1;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.meeting-list h2, .appointment-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.meeting-list table, .appointment-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.meeting-list th, .appointment-list th, .meeting-list td, .appointment-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.meeting-list th, .appointment-list th {
+    background-color: #f2f2f2;
+}

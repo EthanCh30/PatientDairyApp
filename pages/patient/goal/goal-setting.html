@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./goalStyle.css" />
+    <link rel="stylesheet" href="./goal-setting.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Goal Setting</title>
+  </head>
+  <body>
+    <section class="goal-setting">
+      <h2>Set Your Weekly Goal</h2>
+
+      <form id="goalForm">
+        <input type="week" id="goalWeek" />
+        <p>✅ Tick for setting your weekly goal.</p>
+
+        <!-- Sleep time -->
+        <div class="box" id="sleep1">
+          <input type="checkbox" id="sleepGoal" />
+
+          <section class="sleep" id="sleep1">
+            <label for="sleepHours">Sleeping Hours (at least):</label>
+            <div class="sleep-input-container">
+              <input
+                type="range"
+                min="3"
+                max="11"
+                step="1"
+                name="Hours"
+                list="markers"
+              />
+              <datalist id="markers">
+                <option value="3" label="3">3</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+                <option value="9">9</option>
+                <option value="11">11</option>
+              </datalist>
+            </div>
+          </section>
+        </div>
+
+        <!-- Exercise habit  -->
+        <div class="box">
+          <input type="checkbox" id="exerciseGoal" />
+
+          <section class="exercise" id="exercise1">
+            <label for="exerciseHours">Exercise Hours (at least):</label>
+            <div class="exercise-input-container">
+              <input
+                type="range"
+                min="0"
+                max="18"
+                step="1"
+                name="Hours"
+                list="exercise-markers"
+              />
+              <datalist id="exercise-markers">
+                <option value="0" label="0"></option>
+                <option value="3" label="3"></option>
+                <option value="6" label="6"></option>
+                <option value="9" label="9"></option>
+                <option value="12" label="12"></option>
+                <option value="15" label="15"></option>
+                <option value="18" label="18"></option>
+              </datalist>
+            </div>
+          </section>
+        </div>
+
+        <!-- Food habit  -->
+        <div class="Eat">
+          <input type="checkbox" id="foodGoal" />
+          <label for="foodGoal" style="padding: 10px">Eating Habits:</label>
+
+          <section class="food">
+            <div class="food-item" id="wholeGrains">
+              <i
+                class="fa-solid fa-bread-slice fa-2xl"
+                style="color: #d29d00"
+              ></i>
+              <p>Whole grains</p>
+            </div>
+            <div class="food-item" id="fruits">
+              <i class="fa-solid fa-lemon fa-2xl" style="color: #ffd43b"></i>
+              <p>Fruits</p>
+            </div>
+            <div class="food-item" id="vegetables">
+              <i class="fa-solid fa-leaf fa-2xl" style="color: #4caf50"></i>
+              <p>Vegetables</p>
+            </div>
+            <div class="food-item" id="fishEggsMeet">
+              <i class="fa-solid fa-fish fa-2xl" style="color: #2196f3"></i>
+              <p>Fish, Eggs, Meat</p>
+            </div>
+            <div class="food-item" id="oilsFatsNuts">
+              <i class="fa-solid fa-seedling fa-2xl" style="color: #ff6251"></i>
+              <p>Oils, Fats, Nuts</p>
+            </div>
+            <div class="food-item" id="dairyProducts">
+              <i
+                class="fa-solid fa-bottle-droplet fa-2xl"
+                style="color: #74c0fc"
+              ></i>
+              <p>Dairy products</p>
+            </div>
+          </section>
+        </div>
+
+        <button type="submit" id="saveGoals">Save Goals</button>
+      </form>
+    </section>
+
+    <script type="module" src="goal-setting.js"></script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#loginForm, #registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginForm h2, #registerForm h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#loginForm label, #registerForm label {
+    margin: 10px 0 5px;
+    color: #555;
+    display: inline-block;
+    width: 150px; /* Adjust this width as needed */
+    text-align: right;
+}
+
+#loginForm input, #registerForm input {
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: calc(100% - 160px); /* Adjust this width as needed */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Common button styles */
+.button {
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/* Specific button colors */
+.login-button { 
+    background-color: #4CAF50;
+}
+
+.register-button {
+    background-color: #008CBA;
+    width: -webkit-fill-available;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+.register-button:hover {
+    background-color: #007bb5;
+}
